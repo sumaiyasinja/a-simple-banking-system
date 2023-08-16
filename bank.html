@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Daisy & tailwind links-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>bank</title>
+</head>
+<body>
+    <!-- Navbar Section start -->
+    <header>
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+              <a class="btn btn-ghost normal-case text-3xl">Baper Bank Ltd.</a>
+            </div>
+            <div class="flex-none gap-2">
+              <div class="form-control">
+                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+              </div>
+              <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar online">
+                  <div class="w-12 rounded-full">
+                    <img src="https://storage.googleapis.com/pai-images/7e1a13435fc445e69ce2e2d60131aff0.jpeg" />
+                  </div>
+                </label>
+                <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                  <li>
+                    <a class="justify-between" onclick="my_modal_5.showModal()">
+                      Profile
+                      <span class="badge">New</span>
+                    </a>
+                  </li>
+                  <li><a id="settings-btn">Settings</a></li>
+                  <li><a id="logout-btn">Logout</a></li>
+                </ul>
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <form method="dialog" class="modal-box">
+                      <div class="rounded-full">
+                          <div class="w-24 rounded-full mx-auto mb-3 py-3">
+                              <img class="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" src="https://storage.googleapis.com/pai-images/7e1a13435fc445e69ce2e2d60131aff0.jpeg" />
+                          </div>
+                        </div>
+                      <h3 class="py-1 px-4 font-bold text-2xl text-center mb-2">Account Details</h3>
+                      <h3 class="py-1 px-4 font-bold text-lg">User Name: <span class="font-normal">Sumaiya Sinja</span></h3>
+                      <p class="py-1 px-4 font-bold">Address: <span class="font-normal">Dhaka, Bangladesh</span></p>
+                      <p class="py-1 px-4 font-bold">Email: <span class="font-normal">sinja@gmail.com</span></p>
+                      <p class="py-1 px-4 font-bold">Contact No: <span class="font-normal">+880123456789</span></p>
+                  
+                      <div class="modal-action">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                      </div>
+                    </form>
+                  </dialog>
+              </div>
+            </div>
+          </div>
+    </header>
+    <!-- Navbar Section ended -->
+
+    <!-- Main Section start -->
+   <main>
+   
+    <!-- deposit, withdraw, Total money box Section  -->
+   <section class="mt-6">
+    <div id="hidden-alert" class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 hidden" role="alert">
+        <span class="font-medium">Transcation Successful!</span> 
+        Your request for transcation has been completed Succesfully.
+      </div>
+    <div class="grid grid-cols-3 gap-6 ">
+    <div class="conatiner bg-emerald-400 my-10 p-8 rounded-xl text-white w-9/12 mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-2">Deposit</h1>
+        <h1 id="total_deposit" class="text-4xl  text-center">$00</h1>
+    </div>
+
+    <div class="conatiner bg-orange-400 my-10 p-8 rounded-xl text-white w-9/12 mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-2">Withdraw</h1>
+        <h1 id="total_widthdraw" class="text-4xl  text-center">$00</h1>
+    </div>
+
+    <div class="conatiner bg-green-400 my-10 p-8 rounded-xl text-white  w-9/12 mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-2">Total</h1>
+        <h1  class="text-4xl text-center">$<span id="total_money"></span></h1>
+    </div>
+
+</div>
+</section>
+
+<!-- deposit & withdaw form section -->
+<section>
+    <div class="grid grid-cols-2  w-10/12 mx-auto">
+
+    <div class="conatiner w-10/12	 flex flex-col mt-6 bg-blue-400 p-10 rounded-lg placeholder-white text-center" id="form-container">
+        <h1 class="text-3xl font-bold text-center text-white mb-3">Please Deposit</h1>
+        <input class="p-2 bg-black m-4 text-center rounded-3xl focus:bg-black focus:text-white  " type="text" name="deposit-amount" id="deposit-amount"  placeholder="$ Please enter the amount you want to deposit" >
+        <button class="p-2 bg-black w-40 text-xl mx-auto rounded-2xl text-emerald-500 hover:bg-black hover:text-red-400" id="deposit-btn">Deposit</button>
+    </div>
+
+    <div class="conatiner w-10/12	 flex flex-col mt-6  p-10 rounded-lg placeholder-white text-center bg-pink-400" id="form-container">
+        <h1 class="text-3xl font-bold text-center text-white mb-3">Please Withdraw</h1>
+        <input id="withdaw_amount"  class="p-2 bg-black m-4 text-center rounded-3xl focus:bg-black focus:text-white " type="text" name="withdaw-amount"  placeholder="$ Please enter the amount you want to withdaw" >
+        <button id="withdaw-btn" class="p-2 bg-black w-40 text-xl mx-auto rounded-2xl text-emerald-500 hover:bg-black hover:text-red-400" >Withdaw</button>
+    </div>
+</div>
+</section>
+    </main>
+    <!-- Main Section ended -->
+    <div id="bankstatement">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae officiis fugit tenetur.</p>
+    </div>
+    <!-- javascript -->
+    <script src="bankdetails.js"></script>
+</body>
+</html>
