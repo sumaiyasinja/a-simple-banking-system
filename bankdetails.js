@@ -51,7 +51,7 @@ document.getElementById('withdaw-btn').addEventListener('click', function(){
         document.getElementById('hidden-alert').classList.remove("hidden");
         var statement = document.createElement('div');
         statement.innerText = 'Withdraw Amount is:' + withdawAmount;
-        document.getElementById('bankstatement').appendChild(statement);
+        // document.getElementById('bankstatement').appendChild(statement);
         document.getElementById('withdaw_amount').value ='';
     }
     
