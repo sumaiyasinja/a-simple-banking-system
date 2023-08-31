@@ -7,8 +7,10 @@ totalMoney = document.getElementById('total_money').innerText =totalMoney;
 document.getElementById('deposit-btn').addEventListener('click', function(){ 
     var deposit_amount = document.getElementById('deposit-amount').value;
     if(deposit_amount <= 0){
-        alert('Please enter the valid amount')
-        document.getElementById('deposit-amount').value ='';
+      alert('Please enter the valid amount')
+      document.getElementById('deposit-amount').value ='';
+      document.getElementById('hidden-alert').classList.add("hidden");
+
     }else{
     console.log('Deposit Amount is:' + deposit_amount);
     deposit_amount = parseInt(deposit_amount);
@@ -34,6 +36,8 @@ document.getElementById('withdaw-btn').addEventListener('click', function(){
     if(withdawAmount <= 0){
         alert('Please enter the valid amount')
         document.getElementById('withdaw_amount').value =''
+        document.getElementById('hidden-alert').classList.add("hidden");
+
     }
     
     else if(withdawAmount <= totalMoney){
